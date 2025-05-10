@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sentiment analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/stemma.png') }}">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon"><img src="{{ url_for('static', filename='images/stemma.png') }}"
+                        width="50px"></span>
+                <h2>TrasattiGPT</h2>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html" class="active">Sentiment analysis</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h1>Text analysis</h1>
+            <form method="POST">
+                <textarea name="text" placeholder="Write your sentiment here..."></textarea><br><br>
+                <input type="submit" value="Analazing">
+            </form>
+
+            {% if result %}
+            <div class="result">
+                {% if result.errore %}
+                <strong>Errore:</strong> {{ result.errore }}
+                {% else %}
+                <p><strong>Sentiment:</strong> {{ result.sentimento }}</p>
+                <p><strong>Lingua rilevata:</strong> {{ result.lingua }}</p>
+                <p><strong>Testo corretto:</strong> {{ result.testo_corretto }}</p>
+                {% endif %}
+            </div>
+            {% endif %}
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Instructions</h3>
+                    <p>This instrument make a analysis of your sentiment. It can understand if your sentiment is positiven negative or neutral. It also understand your langueage and send you a traduction in english.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Date</h3>
+                    <ul>
+                        <li><a>Damiano Trasatti</a></li>
+                        <li><a">May 2025</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: 
+                        <a href="mailto:trasatti.damiano@istitutomontani.edu.it" style="text-decoration: underline;" target="_blank">
+                            trasatti.damiano@istitutomontani.edu.it
+                        </a>
+                    </p>
+                    <p>Portfolio: 
+                        <a href="https://www.portfoliodamianotrasatti.altervista.org/" style="text-decoration: underline;" target="_blank">
+                            portfoliodamianotrasatti.altervista.org
+                        </a>
+                    </p>
+                    
+                    <!--
+                    <div class="social-icons">
+                        <a href="https://www.portfoliodamianotrasatti.altervista.org/" aria-label="Altervista" target="_blank">
+                            <i class="icon">
+                                <img src="{{ url_for('static', filename='images/altervista.png') }}" width="50rem">
+                            </i>
+                        </a>
+                        <a href="https://www.instagram.com/damianotrasatti?igsh=ejFzcDc1emYzeW0z&utm_source=qr" aria-label="Instagram" target="_blank">
+                            <i class="icon">
+                                <img src="{{ url_for('static', filename='images/instagram.png') }}" width="50rem">
+                            </i>
+                        </a>
+                        <a href="https://www.tiktok.com/@damianotrasatti?_t=ZN-8wDGyJ7ppaQ&_r=1" aria-label="TikTok" target="_blank">
+                            <i class="icon">
+                                <img src="{{ url_for('static', filename='images/tiktok.png') }}" width="50rem">
+                            </i>
+                        </a>
+                    </div>
+                    -->
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy;
+                    <script>
+                        document.write(new Date().getFullYear()) // Aggiorna l'anno
+                    </script>
+                    TrasattiGPT. All rights reserved.
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
