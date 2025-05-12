@@ -282,7 +282,7 @@ input[type="submit"]:hover {
     .nav ul {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
+        gap: 10px;  
     }
     
     h1 {
