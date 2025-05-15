@@ -43,9 +43,10 @@ def index():
         result = backend(text)
     return render_template("index.html", result=result, colore=variabile_colore)
 
-@app.route('/all-functions')
-def all_functions():
-    return render_template('all-functions.html')
+@app.route('/')
+def reload():
+    return render_template('index.html')
+
 
 if __name__ == "__main__":
     app.run(debug=True)
