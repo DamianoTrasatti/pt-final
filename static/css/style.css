@@ -276,6 +276,12 @@ input[type="submit"]:hover {
     main {
         padding: 20px;
     }
+
+    form {
+        scale: 1.5;
+        position: relative;
+        top: 100px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -284,12 +290,22 @@ input[type="submit"]:hover {
         justify-content: center;
         gap: 10px;  
     }
-    
+
     h1 {
-        font-size: 2rem;
+        font-size: 1.7rem;
     }
-    
+
+    ul li a {
+        display: none;
+    }
+
+
     form, .result {
         padding: 20px;
+    }
+
+    form {
+        scale: 1 !important;
+        top: 0 !important;
     }
 }
