@@ -4,6 +4,7 @@
 
 <head>
     <title>Sentiment analysis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='images/stemma.png') }}">
 </head>
@@ -18,7 +19,7 @@
             </div>
             <nav class="nav">
                 <ul>
-                    <li><a href="{{ url_for('templates', filename='index.html') }}" class="active">Sentiment analysis</a></li>
+                    <li><a href="{{ url_for('reload') }}" class="active">Sentiment analysis</a></li>
                 </ul>
             </nav>
         </header>
